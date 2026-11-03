@@ -1,0 +1,14 @@
+{
+  "name": "weldcore-nordic-as",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Flersidig industriell nettside for Weldcore Nordic AS – sertifisert sveising, stålkonstruksjoner og mekaniske tjenester.",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "node build.js",
+    "deploy": "node build.js && firebase deploy --only hosting"
+  },
+  "dependencies": {
+    "firebase": "^11.0.2"
+  }
+}
