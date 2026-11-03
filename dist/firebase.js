@@ -1,19 +1,22 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyBJ8mkn0qzNaugZ4BYR4R3-igCk2oVQAak",
-  authDomain: "pot-kunder-439a4.firebaseapp.com",
-  projectId: "pot-kunder-439a4",
-  storageBucket: "pot-kunder-439a4.firebasestorage.app",
-  messagingSenderId: "461155550472",
-  appId: "1:461155550472:web:76a9c52afc45550ae3d8bd"
-};
+// Henter Firebase-konfigurasjon automatisk fra Firebase Hosting (/__/firebase/init.json)
+// eller fra miljøvariabler lokalt, slik at API-nøkkelen aldri ligger åpent i GitHub.
+async function initFirebase() {
+  try {
+    const res = await fetch("/__/firebase/init.json");
+    if (res.ok) {
+      const hostingConfig = await res.json();
+      return initializeApp({
+        ...hostingConfig,
+        appId: "1:461155550472:web:76a9c52afc45550ae3d8bd"
+      });
+    }
+  } catch (_) {
+    // Lokal kjøring utenfor Firebase Hosting
+  }
+  return null;
+}
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-export { app, firebaseConfig };
+export const appPromise = initFirebase();
