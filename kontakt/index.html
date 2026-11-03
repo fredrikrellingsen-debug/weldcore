@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111822">
+  <title>Kontakt oss for pristilbud eller kapasitet | Weldcore Nordic AS</title>
+  <meta name="description" content="Send forespørsel om sertifisert sveising, stålkonstruksjoner, rørsveising, industriservice eller innleie av sveisere til Weldcore Nordic AS.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "firebase/app": "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js"
+    }
+  }
+  </script>
+  <script type="module" src="/firebase.js"></script>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="topbar-items">
+        <span class="topbar-item"><span class="topbar-dot"></span>Sertifisert sveising (TIG 141 · MIG/MAG 135/136/138 · MMA 111)</span>
+        <span class="topbar-item">WPS / WPQR &amp; NDT-klar utførelse</span>
+      </div>
+      <div class="topbar-items">
+        <a href="tel:+4740000000">Vakt / Prosjekt: +47 400 00 000</a>
+        <a href="mailto:post@weldcore.no">post@weldcore.no</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="logo" href="/"><span class="mark"></span>WELDCORE <b>NORDIC AS</b></a>
+      <button class="burger" id="burgerBtn" type="button" aria-label="Åpne eller lukk hovedmeny" aria-expanded="false">
+        <span id="burgerIcon">☰</span> <span>Meny</span>
+      </button>
+      <nav class="site-nav" id="siteNav" aria-label="Hovednavigasjon">
+        <a href="/">Hjem</a><a href="/tjenester">Tjenester</a><a href="/prosjekter">Prosjekter</a><a href="/om-oss">Om oss</a><a href="/kontakt" class="active" aria-current="page">Kontakt</a>
+        <a class="btn nav-cta-mobile" href="/kontakt">Forespør kapasitet / pristilbud</a>
+      </nav>
+      <a class="btn btn-sm" href="/kontakt">Forespør kapasitet / pristilbud</a>
+    </div>
+  </header>
+
+  <main>
+  
+<section class="page-hero">
+  <div class="wrap">
+    <span class="badge">Forespørsel & Pristilbud</span>
+    <h1>Kontakt oss for pristilbud eller kapasitet</h1>
+    <p class="lead">Send oss en kort beskrivelse av prosjektet eller behovet ditt, så tar vi raskt kontakt for en teknisk gjennomgang.</p>
+  </div>
+</section>
+
+  <section class="section">
+    <div class="wrap csplit">
+      <aside>
+        <div class="card">
+          <span class="tick"></span>
+          <h3>Weldcore Nordic AS</h3>
+          <p>Direkte kontaktpunkter for tilbudsforespørsler, prosjektledelse og akutt utrykning ved driftsstans.</p>
+          <dl class="info">
+            <dt>Telefon (Sentralbord)</dt>
+            <dd><a href="tel:+4740000000">+47 400 00 000</a></dd>
+            <dt>E-post (Tilbud &amp; Tegninger)</dt>
+            <dd><a href="mailto:post@weldcore.no">post@weldcore.no</a></dd>
+            <dt>Vakt / prosjekttelefon</dt>
+            <dd><a href="tel:+4740000001">+47 400 00 001 (Døgnvakt ved driftsstans)</a></dd>
+            <dt>Arbeidstider</dt>
+            <dd>Man–fre 07:00–16:00 (Vakttelefon 24/7 ved avtale/utrykning)</dd>
+          </dl>
+        </div>
+
+        <div class="card dark-card">
+          <span class="tick"></span>
+          <h3>Rask avklaring på forespørsler</h3>
+          <ol class="steps-list">
+            <li>Send inn beskrivelse eller forespørsel</li>
+            <li>Vi gjennomgår omfang, tegninger og tidsramme</li>
+            <li>Du får rask tilbakemelding på kapasitet og pris</li>
+          </ol>
+        </div>
+      </aside>
+
+      <form class="card form" id="f" novalidate>
+        <div class="form-header">
+          <h3>Send forespørsel om oppdrag eller kapasitet</h3>
+          <p>Fyll ut skjemaet nedenfor. Har du tegninger (PDF/DWG/IFC) eller WPS-krav, tar vi imot disse så snart vi oppretter dialog.</p>
+        </div>
+        
+  <label>Bedriftsnavn
+    <input name="firma" type="text" placeholder="F.eks. Nordisk Entreprenør AS" required>
+  </label>
+        
+  <label>Kontaktperson
+    <input name="kontakt" type="text" placeholder="Navn og tittel" required>
+  </label>
+        
+  <label>Telefonnummer
+    <input name="tlf" type="tel" placeholder="+47 000 00 000" required>
+  </label>
+        
+  <label>E-postadresse
+    <input name="epost" type="email" placeholder="navn@bedrift.no" required>
+  </label>
+        <div class="full">
+          
+  <label>Lokasjon / Prosjektsted
+    <input name="sted" type="text" placeholder="Kommune, anleggsplass eller verkstedleveranse" required>
+  </label>
+        </div>
+        
+  <label>Type oppdrag
+    <select name="type" required>
+      <option value="">Velg alternativ …</option>
+      <option value="Sertifisert sveising">Sertifisert sveising</option><option value="Stålkonstruksjoner & Montasje">Stålkonstruksjoner & Montasje</option><option value="Rørsveising & Prosess">Rørsveising & Prosess</option><option value="Industriservice & Vedlikehold">Industriservice & Vedlikehold</option><option value="Innleie av sveisere">Innleie av sveisere</option><option value="Annet">Annet</option>
+    </select>
+  </label>
+        
+  <label>Ønsket oppstart
+    <select name="start" required>
+      <option value="">Velg alternativ …</option>
+      <option value="Akutt">Akutt</option><option value="Så snart som mulig">Så snart som mulig</option><option value="Innen 2–4 uker">Innen 2–4 uker</option><option value="Planlagt fremtidig prosjekt">Planlagt fremtidig prosjekt</option>
+    </select>
+  </label>
+        <label class="full">Beskrivelse av oppdraget / materialkrav
+          <textarea name="beskrivelse" rows="6" placeholder="Beskriv kort omfang, materialkvalitet (f.eks. S355, 316L, aluminium), dimensjoner, tegningsgrunnlag eller ønsket antall sveisere/montører …" required></textarea>
+        </label>
+        <button class="btn full" type="submit">Send forespørsel</button>
+        <p class="ok full" id="ok" hidden>Takk for forespørselen! Vi har mottatt opplysningene dine og tar raskt kontakt for teknisk gjennomgang.</p>
+      </form>
+    </div>
+  </section></main>
+
+  <footer class="site-footer">
+    <div class="wrap fgrid">
+      <div>
+        <div class="logo"><span class="mark"></span>WELDCORE <b>NORDIC AS</b></div>
+        <p>Sertifisert sveising, prefabrikasjon av stålkonstruksjoner, prosessrør og mekaniske tjenester for industri, bygg og anlegg, maritim sektor og energi i hele Norden.</p>
+        <p class="muted">Org.nr: 932 000 000 MVA<br>Telefon: +47 400 00 000<br>E-post: post@weldcore.no</p>
+      </div>
+      <div>
+        <h4>Hurtiglenker</h4>
+        <a href="/">Hjem</a><a href="/tjenester">Tjenester</a><a href="/prosjekter">Prosjekter</a><a href="/om-oss">Om oss</a><a href="/kontakt">Kontakt</a>
+      </div>
+      <div>
+        <h4>Fagområder</h4>
+        <a href="/tjenester">Sertifisert Sveising &amp; Spesialsveis</a>
+        <a href="/tjenester">Stålkonstruksjoner &amp; Montasje</a>
+        <a href="/tjenester">Industrirør &amp; Rørsveising</a>
+        <a href="/tjenester">Industriservice, Vedlikehold &amp; Reparasjon</a>
+      </div>
+      <div>
+        <h4>Kvalitet &amp; Standard</h4>
+        <a href="/prosjekter">Sveisere sertifisert iht. ISO 9606</a>
+        <a href="/prosjekter">Utførelse etter WPS / WPQR</a>
+        <a href="/prosjekter">Materialsporbarhet (3.1-sertifikater)</a>
+        <a href="/kontakt">Akutt utrykning og revisjonsstans</a>
+      </div>
+    </div>
+    <div class="wrap copy">
+      <span>© Weldcore Nordic AS. Levert av Vikingnet.</span>
+      <span>Optimalisert for mobil, nettbrett, PC og storskjerm</span>
+    </div>
+  </footer>
+
+  <div class="mobile-dock" aria-label="Hurtigvalg for mobil">
+    <a class="btn btn-ghost" href="tel:+4740000000">Ring prosjektvakt</a>
+    <a class="btn" href="/kontakt">Forespør tilbud</a>
+  </div>
+
+  <script>
+    (function(){
+      var btn = document.getElementById('burgerBtn');
+      var icon = document.getElementById('burgerIcon');
+      if (!btn) return;
+      function setOpen(open) {
+        document.body.classList.toggle('nav-open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (icon) icon.textContent = open ? '✕' : '☰';
+      }
+      btn.addEventListener('click', function(){
+        setOpen(!document.body.classList.contains('nav-open'));
+      });
+      document.addEventListener('keydown', function(e){
+        if (e.key === 'Escape') setOpen(false);
+      });
+    })();
+  </script>
+  <script>
+    (function(){
+      var f = document.getElementById('f');
+      var ok = document.getElementById('ok');
+      if (!f) return;
+      f.addEventListener('submit', function(e){
+        e.preventDefault();
+        if (!f.reportValidity()) return;
+        ok.hidden = false;
+        f.reset();
+        ok.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    })();
+  </script>
+</body>
+</html>
